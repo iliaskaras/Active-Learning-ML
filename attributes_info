@@ -1,0 +1,23 @@
+Attribute Information:
+
+    train-data.dat and test-data.dat: These files contain the bag-of-word representation of the training and test documents. Each line is of the form:
+    <S_d> sentence_1 sentence_2 … sentence_{Sd}
+    where Sd is the number of sentences in document d. Each sentence s is in the following format:
+    <L_s> w_{1s} w_{2s} … w_{L_s s}
+    where L_s is the number of words in sentence s, and w_{is} is an integer which indexes the i-th term in sentence s.
+
+    vocabs.txt: This file contains the list of words used for indexing the document representations in data files. Each line contains: word, index.
+
+    train-label.dat and test-label.dat: Each file contains a D by C binary matrix where D is the number of documents in every file and C=20 is the number of classes. The element b_{dc} is 1 if class c is present in document d and zero otherwise.
+
+    test-sentlabel.dat, labeled_test_sentences.dat:
+
+    test-sentlabel.dat: This file contains class labels for sentences of the test documents. Each line d is of the form:
+    <y_{11d} y_{12d} … y_{1Cd}><y_{21d} y_{22d} … y_{2Cd}>...<y_{S_d1d} y_{S_d2d} … y_{S_dCd}>
+    where y_{scd} is the binary indicator of class c for sentence s of document d. y_{scd} is 1 if class c present in sentence s and zero otherwise.
+    Note that only 1468 sentences are randomly selected and manually labeled. For the rest of the sentences that are unlabeled, we set y_{scd}=-1.
+    labeled_test_sentences.dat: This file only contains the class labels for the 1468 sentences which are manually labeled. Each line of this file is of the form:
+    d s y_{s1d} y_{s2d} … y_{sCd}
+    where d and s are respectively document and sentence indices.
+
+    labels.txt: This contains the list of all class labels in this dataset. Each line is of the form: label, index.
